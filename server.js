@@ -8,11 +8,7 @@ var bcrypt = require("bcryptjs");
 const jwt_secret = "WU5CjF8fHxG40S2t7oyk";
 
 app.use(bodyparser.json());
-app.use(express.static(path.join(__dirname, "./build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "./public/index.html"));
-});
 const connection = mysql.createConnection({
   host: "ibu-db-server.adnan.dev",
   user: "almin-p",
