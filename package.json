@@ -21,10 +21,8 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "client-install": "npm install",
-    "start": "node ./src/server.js",
+    "start": "npm start",
     "server": "nodemon ./src/server.js",
-    "client": "npm start",
     "dev": "concurrently \"npm run server\" \"npm run\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
