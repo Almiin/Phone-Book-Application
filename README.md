@@ -21,6 +21,14 @@ Goal is to enable users to find wanted person as easy as possible with the very 
 • Node.js/Express for backend
 • MySQL database
 
+## Architectural pattern
+
+• MVC
+
+## Design pattern
+
+• Adapter pattern
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
