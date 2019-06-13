@@ -16,7 +16,9 @@ class LegalEntities extends Component {
   }
 
   fetchData() {
-    fetch("/entities")
+    fetch("/entities", {
+      headers: { jwt: localStorage.getItem("token") }
+    })
       .then(res => res.json())
       .then(entities => this.setState({ entities }))
       .catch(error => console.log("parsing error", error));

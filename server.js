@@ -37,16 +37,37 @@ app.get("/userAccounts", (req, res) => {
 });
 
 app.get("/persons", (req, res) => {
-  connection.query("Select * FROM natural_persons", (err, rows, fields) => {
-    console.log("I think we fetched persons!");
-    res.json(rows);
+  var token = req.headers["jwt"];
+  if (!token)
+    return res.status(401).send({ auth: false, message: "No token provided." });
+
+  jwt.verify(token, jwt_secret, function(err, decoded) {
+    if (err)
+      return res
+        .status(500)
+        .send({ auth: false, message: "Failed to authenticate token." });
+
+    connection.query("Select * FROM natural_persons", (err, rows, fields) => {
+      console.log("I think we fetched persons!");
+      res.json(rows);
+    });
   });
 });
 
 app.get("/entities", (req, res) => {
-  connection.query("Select * FROM legal_entities", (err, rows, fields) => {
-    console.log("I think we fetched persons!");
-    res.json(rows);
+  var token = req.headers["jwt"];
+  if (!token)
+    return res.status(401).send({ auth: false, message: "No token provided." });
+
+  jwt.verify(token, jwt_secret, function(err, decoded) {
+    if (err)
+      return res
+        .status(500)
+        .send({ auth: false, message: "Failed to authenticate token." });
+    connection.query("Select * FROM legal_entities", (err, rows, fields) => {
+      console.log("I think we fetched persons!");
+      res.json(rows);
+    });
   });
 });
 

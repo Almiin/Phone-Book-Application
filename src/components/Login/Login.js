@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Background from "../../assets/img/slika.png";
 
 class Login extends Component {
   state = {
@@ -73,8 +74,7 @@ class Login extends Component {
                   <div
                     className="col-lg-6 d-none d-lg-block bg-login-image"
                     style={{
-                      background:
-                        'url("https://source.unsplash.com/K4mSJ7kc0As/600x800")',
+                      backgroundImage: `url(${Background})`,
                       backgroundPosition: "center",
                       backgroundSize: "cover"
                     }}

@@ -16,7 +16,9 @@ class NaturalPerson extends Component {
   }
 
   fetchData() {
-    fetch("/persons")
+    fetch("/persons", {
+      headers: { jwt: localStorage.getItem("token") }
+    })
       .then(res => res.json())
       .then(persons => this.setState({ persons }))
       .catch(error => console.log("parsing error", error));
