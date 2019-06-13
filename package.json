@@ -21,12 +21,11 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "client-install": "npm install",
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start",
-    "dev": "concurrently \"npm run server\" \"npm run\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
+    "start": "react-scripts start",
+    "server": "nodemon ./src/server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
