@@ -23,6 +23,7 @@
   "scripts": {
     "start": "npm start",
     "server": "nodemon ./src/server.js",
+    "build": "npm run build",
     "dev": "concurrently \"npm run server\" \"npm run\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
